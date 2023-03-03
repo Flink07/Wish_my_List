@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/loginstyle.css">
+    <title>Wish My List</title>
+</head>
+<body>
+    <div>
+        <div class="">
+            <h1 class="title text-white">WishMyList</h1>
+            <p class="center text-white">Because Leisure Shouldn't Be Forgotten</p>
+            <p>.</p>
+        </div>
+        <div class="flex">
+            <div>
+                {% for messages in get_flashed_messages(category_filter=['log']) %}
+                            <p class="warning">{{messages}}</p>
+                        {% endfor %}
+                <form action="/users/login" method="post" class="form">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="form-inner">
+                        <h3 class="center text-white">Login</h3>
+                        <div class="content">
+                            <div class="text-white">
+                                Email:
+                                <input class="input" name="email"  type="email" placeholder="Email">
+                            </div>
+                            <div class="text-white">
+                                Password:
+                                <input class="input" name="password" type="password" placeholder="Password">
+                            </div>
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                        {% for messages in get_flashed_messages() %}
+                            <p class="warning">{{messages}}</p>
+                        {% endfor %}
+                
+                <form action="/users/register", method="post" class="form extend scroll">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div class="form-inner">
+                        <h3 class="text-white center">Sign Up</h3>
+                        <div class="content">
+                            <div class="text-white">
+                                First Name:
+                                <input name="first_name" class="input">
+                            </div>
+                            <div class="text-white">
+                                Last Name:
+                                <input name="last_name" class="input" >
+                            </div>
+                            <div class="text-white">
+                                Email:
+                                <input name="email" class="input" >
+                            </div>
+                            <div class="text-white">
+                                Password:
+                                <input name="password" type="password"  class="input">
+                            </div>
+                            <div class="text-white">
+                                confirm_password:
+                                <input name="confirm_password" type="password" class="input">
+                            </div>
+                            <button class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+</body>
+</html>

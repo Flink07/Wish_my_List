@@ -1,0 +1,62 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 0px none; */
+    outline: 0px;
+    padding: 0px ;
+    margin: 0px;
+}
+
+
+/* Generic CSS */
+.flex {
+    display: flex; 
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.text-white {
+    color: white;
+    padding: 0 10px;
+    text-decoration: none;
+}
+.margin { 
+    margin: 20px;
+}
+
+.warning {
+    color: red;
+}
+
+.night {
+    background-color: rgb(20,20,20);
+}

@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+
+/* Generic CSS */
+.flex {
+    display: flex;
+    gap: 260px; 
+}
+
+.center {
+    text-align: center;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-evenly {
+    justify-content: space-evenly;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-end {
+    align-items: flex-end;
+    
+}
+.align-start {
+    align-items: flex-start;
+    
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.text-white {
+    color: white;
+    padding: 0 10px;
+    text-decoration: none;
+}
+/* .margin { 
+    margin: 20px;
+} */
+
+.warning {
+    color: red;
+}
+
+.night {
+    background-color: rgb(20,20,20);
+}
+
+.filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: .7;
+
+    background: rgb(233,76,161);
+background: linear-gradient(90deg, rgba(233,76,161,1) 0%, rgba(199,74,233,1) 100%);
+}
+
+.table {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(32,32,32,.3);
+    background: #fafafa;
+    text-align: center;
+}
+
+thead,td{
+    padding: 10px 15px;
+}
+
+thead {
+    background: #a518be;
+    color: #fafafa;
+    text-transform: uppercase;
+}
+
+td{
+    font-family: 'Open Sans' ,sans-serif;
+    font-weight: bold;
+}
+
+/* tr:nth-child(odd){
+    background-color: moccasin;
+} */
+
+.bold{
+    font-weight: bold;
+}
+
+img {
+    margin-top: 100px;
+    margin-right: 120px;
+    border-radius: 60px;
+}
+
+
+.input {
+    /* display: block;
+    padding: 12px 15px;
+    border: 1.5px solid rgb(109, 87, 121);
+    outline: none;
+    background: #19052c;
+    color: white;
+    width: 100%;
+    left: 50%; */
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.margenn {
+    margin-top: 20px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/dashstyle.css">
+    <title>Edit</title>
+</head>
+<body>
+    <div class="container filter">
+        {% for messages in get_flashed_messages() %}
+            <H3 class="warning">{{messages}}</H3>
+        {% endfor %}
+
+        <div class="justify-around flex">
+            <div>
+                <h1>Edit the Restaurant you'd like to visit soon</h1>
+            </div>
+            <div class="">
+                <a class="btn btn-primary" href="/dashboard">Return to your list</a>
+                <a class="btn btn-danger" href="/logout">Log me out</a>
+            </div>
+        </div>
+        <form action="/restaurants/{{this_restaurant.id}}/update", method="post">
+            <div>
+                <div>
+                    Name
+                    <input name="name" value="{{this_restaurant.name}}" class="input">
+                </div>
+                <div>
+                    Type
+                    <select name="type" id="type" value="{{this_restaurant.type}}" class="input">
+                        <option value="Sushi">Sushi</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Mexican">Mexican</option>
+                        <option value="Mediterranean">Mediterranean</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="PHO/Viet">PHO/Viet</option>
+                        <option value="Dumpling">Dumpling House</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Peruvian">Peruvian</option>
+                        <option value="Tacos">Tacos</option>
+                        <option value="FastFood">FastFood</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    Address
+                    <input name="address" value="{{this_restaurant.address}}" class="input">
+                </div>
+                <div>
+                    Description
+                    <textarea name="description" cols="30" rows="2" class="input">{{this_restaurant.description}}</textarea>
+                </div>
+                <div>
+                    Recommendation
+                    <textarea name="recommendation" cols="30" rows="2" class="input">{{this_restaurant.recommendation}}</textarea>
+                </div>
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

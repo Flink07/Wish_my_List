@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/dashstyle.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container filter">
+        <div class="flex">
+            <div>
+                <h1>Welcome, {{logged_user.first_name}}</h1>
+                <h3>These are the Restaurants you want to visit soon:</h3>
+            </div>
+            <div class="">
+                <a class="btn btn-danger" href="/logout">Sign Out</a>
+                <a class="btn btn-success" href="/restaurants/new">Add a Restaurant to Visit</a>
+            </div>
+        </div>
+        <div><p>.</p></div>
+        <div>
+            <table class="table">
+                <thead >
+                    <tr>
+                        <th>Restaurant Name</th>
+                        <th>Type</th>
+                        <th>Address</th>
+                        <th>Description</th>
+                        <th>Recommendation</th>
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for one_restaurant in all_restaurants %} 
+                    <tr>
+                        <td>{{one_restaurant.name}}</td>
+                        <td>{{one_restaurant.type}}</td>
+                        <td>{{one_restaurant.address}}</td>
+                        <td>{{one_restaurant.description}}</td>
+                        <td>{{one_restaurant.recommendation}}</td>
+                        <td>
+                            <a href="/restaurants/{{one_restaurant.id}}">View Restaurant</a>
+
+                            {% if one_restaurant.user_id == session['user_id'] %}
+                                <a href="/restaurants/{{one_restaurant.id}}/edit">Edit</a>
+                                <a href="/restaurants/{{one_restaurant.id}}/delete">delete</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
